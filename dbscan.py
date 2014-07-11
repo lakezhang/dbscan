@@ -127,7 +127,8 @@ def expand_dbscan(neighbours, point, minpts) :
             continue
 
         neighbours[p]['c'] = point
-        candidate.union(neighbours[p]['n'])
+        if neighbours[p]['m'] >= minpts :
+            candidate.union(neighbours[p]['n'])
 
 
 def evaluate(data) :
